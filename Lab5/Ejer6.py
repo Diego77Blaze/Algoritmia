@@ -1,6 +1,6 @@
 def cambiarCaracter(car1, car2, listaCadena, pos):
     char = car1+car2
-    tabla = {
+    M = {
         "aa": "b",
         "ab": "b",
         "ac": "a",
@@ -19,11 +19,12 @@ def cambiarCaracter(car1, car2, listaCadena, pos):
         "dd": "b"
     }
     posibLista = listaCadena.copy()
-    posibLista[pos] = tabla.get(char)
+    posibLista[pos] = M.get(char)
     posibLista.pop(pos+1)
     return posibLista
 
 def backtrackingCadena(cad):
+    print(cad)
     if(len(cad)==1):
         if cad[0] not in validos:
             validos.append(cad[0])

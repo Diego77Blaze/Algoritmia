@@ -9,14 +9,12 @@ def posMaximo(maximo, tabla):
         iterador = iterador + 1
     return pos
 
-
 def maximaSubsecuencia(tabla):
     resultado = 0
     for i in range(len(tabla[len(tabla) - 1])):
         if tabla[len(tabla) - 1][i] > resultado:
             resultado = tabla[len(tabla) - 1][i]
     return resultado
-
 
 def numPosicionesContiguas(cadena1, cadena2, num1, num2):
     if num2 < len(cadena2) and num1 < len(cadena1) and cadena1[num1] == cadena2[num2]:
@@ -25,7 +23,6 @@ def numPosicionesContiguas(cadena1, cadena2, num1, num2):
         resultado = 0
     return resultado
 
-
 def subsecuenciaComun(tabla, secuenciaBits):
     pos = posMaximo(maximaSubsecuencia(tabla), tabla)
     valorPos = tabla[len(tabla) - 1][pos]
@@ -33,7 +30,6 @@ def subsecuenciaComun(tabla, secuenciaBits):
     for i in range(pos, pos + valorPos):
         subcadena.append(secuenciaBits[i])
     return subcadena
-
 
 def crearTablaSecuencias(cadena1, cadena2):
     tabla = []
@@ -68,14 +64,9 @@ def crearTablaSecuencias(cadena1, cadena2):
         aux.append(fila)
     return aux
 
-
 cadena1 = "01101010"
 cadena2 = "101001001"
 tabla = crearTablaSecuencias(cadena1, cadena2)
-for i in range(len(tabla)):
-    for j in range(len(tabla[i])):
-        print(tabla[i][j], end=" ")
-    print("\n")
 print("Longitud de la subcadena más larga: ", maximaSubsecuencia(tabla))
 subcadena = subsecuenciaComun(tabla, cadena2)
 print("Esta es una de las posibilidades: ", end="")

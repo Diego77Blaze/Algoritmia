@@ -25,7 +25,9 @@ def cambiarCaracter(car1, car2, listaCadena, pos):
 
 def backtrackingCadena(cad):
     print(cad)
-    if(len(cad)==1):
+    if(len(cad)==0):
+        print("La lista está vacía, inserte una lista no vacía para comprobar la funcionalidad del programa.")
+    elif(len(cad)==1):
         if cad[0] not in validos:
             validos.append(cad[0])
     else:
@@ -38,4 +40,4 @@ cadena = "acabada"
 lista = list(cadena)
 validos = []
 backtrackingCadena(lista)
-print(validos)
+print("El resultado final es:", validos)

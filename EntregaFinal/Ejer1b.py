@@ -28,6 +28,6 @@ def ejer1(listaUsuarios):
 
 
 usuarios = {'Carlos': ['Antonio', 'Emma'], 'Emma': ['Bea'], 'Antonio': ['Bea', 'Carlos', 'Emma'],
-            'Bea': ['Emma', 'Carlos', 'Antonio'], 'David': ['Fernando'], 'Fernando': ['Emma']}
+            'Bea': ['Emma', 'Carlos', 'Antonio'], 'David': ['Fernando'], 'Fernando': []}
 
 print(ejer1(usuarios))

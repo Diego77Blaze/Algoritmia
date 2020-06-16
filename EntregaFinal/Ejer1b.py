@@ -22,11 +22,12 @@ def ejer1(listaUsuarios):
             restoGrupos = restoGrupos2
         resFinal.append(primerElem)
         grupos = restoGrupos
+    print("Los grupos de usuarios son: ", resFinal)
     gradoConexion = len(resFinal)/len(listaUsuarios)
     return gradoConexion
 
 
 usuarios = {'Carlos': ['Antonio', 'Emma'], 'Emma': ['Bea'], 'Antonio': ['Bea', 'Carlos', 'Emma'],
-            'Bea': ['Emma', 'Carlos', 'Antonio'], 'David': ['Fernando'], 'Fernando': []}
+            'Bea': ['Emma', 'Carlos', 'Antonio'], 'David': ['Fernando'], 'Fernando': ['Emma']}
 
 print(ejer1(usuarios))

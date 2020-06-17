@@ -20,6 +20,7 @@ def cambiarCaracter(car1, car2, listaCadena, pos):
     }
     posibLista = listaCadena.copy()
     posibLista[pos] = M.get(char)
+    print("Reemplazados", car1,car2, "->", posibLista[pos])
     posibLista.pop(pos+1)
     return posibLista
 
@@ -28,10 +29,8 @@ def backtrackingCadena(cad, letraRes):
     if(len(cad)==0):
         print("La lista está vacía, inserte una lista no vacía para comprobar la funcionalidad del programa.")
     elif(len(cad)==1):
-        if cad[0] not in validos:
-            validos.append(cad[0])
-            if cad[0] == letraRes:
-                print("Encontrada: ", cad[0])
+        if cad[0] == letraRes:
+            print("Encontrada: ", cad[0])
     else:
         for i in range(len(cad)-1):
             posibleCad = cambiarCaracter(cad[i], cad[i+1],cad, i)
@@ -40,6 +39,4 @@ def backtrackingCadena(cad, letraRes):
 cadena = "acabada"
 caracter = 'd'
 lista = list(cadena)
-validos = []
 backtrackingCadena(lista, caracter)
-print("El resultado final es:", validos)

@@ -15,8 +15,8 @@ def ejer1(listaUsuarios):
             numElemsPrimero = len(primerElem)
             restoGrupos2 = []
             for grupo in restoGrupos:
-                if len(primerElem.intersection(set(grupo))) != 0: #hay elementos en común
-                    primerElem.update(grupo) #return set s with elements added from t
+                if len(primerElem.intersection(set(grupo))) != 0:
+                    primerElem.update(grupo)
                 else:
                     restoGrupos2.append(grupo)
             restoGrupos = restoGrupos2
@@ -26,8 +26,6 @@ def ejer1(listaUsuarios):
     gradoConexion = len(resFinal)/len(listaUsuarios)
     return gradoConexion
 
-
-usuarios = {'Carlos': ['Antonio', 'Emma'], 'Emma': ['Bea'], 'Antonio': ['Bea', 'Carlos', 'Emma'],
-            'Bea': ['Emma', 'Carlos', 'Antonio'], 'David': ['Fernando'], 'Fernando': []}
-
-print(ejer1(usuarios))
+usuarios = {'Antonio': ['Bea', 'Carlos', 'Emma'], 'Carlos': ['Antonio', 'Emma'],
+            'Emma': ['Bea'], 'Bea': ['Emma', 'Carlos', 'Antonio'], 'David': ['Fernando'], 'Fernando': []}
+print("Y, por tanto, este es el grado de conexión:", ejer1(usuarios))

@@ -1,0 +1,3 @@
+Numero de grupos: 2
+Los grupos de usuarios son: [{'Antonio', 'Emma', 'Bea', 'Carlos'}, {'Fernando', 'David'}]
+Y, por tanto, este es el grado de conexión: 0.3333333333333333

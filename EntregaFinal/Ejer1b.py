@@ -22,7 +22,13 @@ def ejer1(listaUsuarios):
             restoGrupos = restoGrupos2
         resFinal.append(primerElem)
         grupos = restoGrupos
-    print("Los grupos de usuarios son: ", resFinal)
+    file.write("Numero de grupos: ")
+    file.write(str(len(resFinal)))
+    file.write("\n")
+    file.write("Los grupos de usuarios son: ")
+    file.write(str(resFinal))
+    file.write("\n")
+
     gradoConexion = len(resFinal)/len(listaUsuarios)
     return gradoConexion
 
@@ -38,5 +44,11 @@ for linea in lineasArchivo:
             value.append(elem)
     usuarios[key] = value
 
-print("Y, por tanto, este es el grado de conexión:", ejer1(usuarios))
+f = open("resultado_voraz.txt", "w")
+f.write("")
+f.close()
+file = open("resultado_voraz.txt", "a")
+w = ejer1(usuarios)
+file.write("Y, por tanto, este es el grado de conexión: ")
+file.write(str(w))
 

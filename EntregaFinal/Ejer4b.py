@@ -3,25 +3,24 @@ def camionBacktracking(mapa, numFilas, numColumnas, movimientos,actX, actY, orie
         if minGiros[0]==-1:
             minGiros[0]=giros
             datos = []
-            datos.append(mapa)
+            mapaTupla = convertirTupla(lado1, lado2, mapa)
+            datos.append(mapaTupla)
             datos.append(giros)
             datos.append(caminos)
             sols.append(datos)
             return True
         else:
-            if(giros<minGiros[0]):
                 minGiros[0] = giros
                 datos = []
-                datos.append(mapa)
+                mapaTupla = convertirTupla(lado1, lado2, mapa)
+                datos.append(mapaTupla)
                 datos.append(giros)
                 datos.append(caminos)
                 sols.append(datos)
                 return True
-            else:
-                return False
     else:
         for value in list(conteoCasillas.values()):
-            if value > 3:
+            if value > 4:
                 return False
         for i in range(2):
             testOrientacion = movimientos[orientacion][i][0]
@@ -58,6 +57,16 @@ def printMatriz(mapa):
         print()
     print()
 
+def convertirTupla(lado1, lado2, matrizSolucion):
+    tupla = []
+    for i in range(lado2):
+        lineaTupla = []
+        for j in range(lado1):
+            lineaTupla.append(matrizSolucion[i][j])
+        tupla.append(lineaTupla)
+    tuplafinal = tuple(tupla)
+    return tuplafinal
+
 archivo = open("ejemplo_backtracking.txt").read()
 lista = archivo.split('\n')
 lado1 = int(lista[0][0])
@@ -84,6 +93,7 @@ movimientosXY = {
 sols = []
 caminos = []
 minGiros = [-1]
+
 conteoCasillas = {}#diccionario de casillas
 res = camionBacktracking(matriz, lado1, lado2, movimientosXY, posInicioX, posInicioY,'l', 0, minGiros)
 for result in sols:

@@ -4,7 +4,7 @@ def backtrackingCaballo(tab, ladoTab1, ladoTab2, numMov, posibX, posibY, actX, a
     for i in range(len(posibX)):
         testX = actX + posibX[i]
         testY = actY + posibY[i]
-        if 0 <= testX < lado2 and testY >= 0 and testY < lado1 and tab[testX][testY] == "-":
+        if 0 <= testX < ladoTab2 and 0 <= testY < ladoTab1 and tab[testX][testY] == "-":
             tab[testX][testY] = numMov
             if backtrackingCaballo(tab, ladoTab1, ladoTab2, numMov + 1, posibX, posibY, testX, testY):
                 return True

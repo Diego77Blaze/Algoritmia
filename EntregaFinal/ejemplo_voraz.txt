@@ -1,0 +1,6 @@
+Antonio:Bea,Carlos,Emma
+Carlos:Antonio,Emma
+Emma:Bea
+Bea:Emma,Carlos,Antonio
+David:Fernando
+Fernando:

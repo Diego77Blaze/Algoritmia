@@ -1,7 +1,17 @@
+def esPotenciaDos(num):
+    if num == 0:
+        return False
+    while num != 1:
+        if num % 2 != 0:
+            return False
+        num = num // 2
+    return True
+
 def divideYVenceras(listaNotas):
-    if len(listaNotas) % 2 == 0:
         if len(listaNotas) / 2 == 1:
             media = (listaNotas[0] + listaNotas[1]) / 2
+            f.write(str(media))
+            f.write("  ")
             return media
         else:
             n = len(listaNotas)
@@ -11,9 +21,13 @@ def divideYVenceras(listaNotas):
 
 def divideYVenceras2(listaNotas):
     if len(listaNotas) == 1:
+        f.write(str(listaNotas[0]))
+        f.write("  ")
         return listaNotas[0]
     elif len(listaNotas) == 2:
         suma = listaNotas[0] + listaNotas[1]
+        f.write(str(suma))
+        f.write("  ")
         return suma
     else:
         n = len(listaNotas)
@@ -23,7 +37,24 @@ def divideYVenceras2(listaNotas):
         return sumaTotal
 
 
-notasAsignaturasPar = [6, 3, 4, 1, 2, 3, 8, 10]
-notasAsignaturasImpar = [6, 3, 4, 1, 2, 3, 8, 10, 1]
-print("Media para n potencia de dos:", divideYVenceras(notasAsignaturasPar))
-print("Media para n que no sea potencia de dos:", divideYVenceras2(notasAsignaturasImpar)/len(notasAsignaturasImpar))
+archivo = open("ejemplo_dyv.txt").read()
+notasAsignaturas = []
+lineasArchivo = archivo.split('\n')
+for linea in lineasArchivo:
+    notasAsignaturas.append(int(linea))
+f = open("resultado_dyv.txt", "w")
+f.write("")
+f.close()
+if esPotenciaDos(len(notasAsignaturas)):
+    f = f = open("resultado_dyv.txt", "a")
+    w =divideYVenceras(notasAsignaturas)
+    f.write("--> Resultado = ")
+    f.write(str(w))
+else:
+    f = open("resultado_dyv.txt", "a")
+    l = len(notasAsignaturas)
+    w = divideYVenceras2(notasAsignaturas)/l
+    f.write("--> Resultado = ")
+    f.write(str(w))
+
+

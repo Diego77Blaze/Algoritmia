@@ -26,6 +26,17 @@ def ejer1(listaUsuarios):
     gradoConexion = len(resFinal)/len(listaUsuarios)
     return gradoConexion
 
-usuarios = {'Antonio': ['Bea', 'Carlos', 'Emma'], 'Carlos': ['Antonio', 'Emma'],
-            'Emma': ['Bea'], 'Bea': ['Emma', 'Carlos', 'Antonio'], 'David': ['Fernando'], 'Fernando': []}
+archivo = open("ejemplo_voraz.txt").read()
+usuarios = {}
+lineasArchivo = archivo.split('\n')
+for linea in lineasArchivo:
+    separacion = linea.split(":")
+    key = separacion[0]
+    value = []
+    for elem in separacion[1].split(","):
+        if(elem)!='':
+            value.append(elem)
+    usuarios[key] = value
+
 print("Y, por tanto, este es el grado de conexión:", ejer1(usuarios))
+

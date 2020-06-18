@@ -51,4 +51,3 @@ file = open("resultado_voraz.txt", "a")
 w = ejer1(usuarios)
 file.write("Y, por tanto, este es el grado de conexión: ")
 file.write(str(w))
-

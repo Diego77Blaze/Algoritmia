@@ -1,23 +1,13 @@
-def camionBacktracking(mapa, numFilas, numColumnas, movimientos,actX, actY, orientacion, giros, minGiros):
+def camionBacktracking(mapa, numFilas, numColumnas, movimientos,actX, actY, orientacion, giros):
     if(mapa[actX][actY]=='2'):
-        if minGiros[0]==-1:
-            minGiros[0]=giros
-            datos = []
-            mapaTupla = convertirTupla(lado1, lado2, mapa)
-            datos.append(mapaTupla)
-            datos.append(giros)
-            datos.append(caminos)
-            sols.append(datos)
-            return True
-        else:
-                minGiros[0] = giros
-                datos = []
-                mapaTupla = convertirTupla(lado1, lado2, mapa)
-                datos.append(mapaTupla)
-                datos.append(giros)
-                datos.append(caminos)
-                sols.append(datos)
-                return True
+        datos = []
+        mapaTupla = convertirMapaTupla(lado1, lado2, mapa)
+        datos.append(mapaTupla)
+        datos.append(giros)
+        caminosTupla = convertirCaminoTupla(caminos)
+        datos.append(caminosTupla)
+        sols.append(datos)
+        return True
     else:
         for value in list(conteoCasillas.values()):
             if value > 4:
@@ -34,20 +24,20 @@ def camionBacktracking(mapa, numFilas, numColumnas, movimientos,actX, actY, orie
                     posicion = []
                     posicion.append(testX)
                     posicion.append(testY)
+                    posicion.append(testOrientacion)
                     caminos.append(posicion)
                     casillaKey = str(testX)+str(testY)
                     if casillaKey not in conteoCasillas:
                         conteoCasillas[casillaKey] = 1
                     else:
                         conteoCasillas[casillaKey]=conteoCasillas.get(casillaKey)+1
-                if not camionBacktracking(mapa, numFilas, numColumnas, movimientos,testX,testY,testOrientacion, giros, minGiros):
+                if not camionBacktracking(mapa, numFilas, numColumnas, movimientos,testX,testY,testOrientacion, giros):
                     casillaKey = str(testX) + str(testY)
                     mapa[testX][testY] = '0'
                     if len(caminos)!=0:
                         caminos.pop()
                     if casillaKey in conteoCasillas:
                         conteoCasillas[casillaKey] = conteoCasillas.get(casillaKey) - 1
-
     return False
 
 def printMatriz(mapa):
@@ -57,12 +47,22 @@ def printMatriz(mapa):
         print()
     print()
 
-def convertirTupla(lado1, lado2, matrizSolucion):
+def convertirMapaTupla(lado1, lado2, matrizSolucion):
     tupla = []
     for i in range(lado2):
         lineaTupla = []
         for j in range(lado1):
             lineaTupla.append(matrizSolucion[i][j])
+        tupla.append(lineaTupla)
+    tuplafinal = tuple(tupla)
+    return tuplafinal
+
+def convertirCaminoTupla(caminos):
+    tupla = []
+    for i in range(len(caminos)):
+        lineaTupla = []
+        for j in range(3):
+            lineaTupla.append(caminos[i][j])
         tupla.append(lineaTupla)
     tuplafinal = tuple(tupla)
     return tuplafinal
@@ -92,10 +92,10 @@ movimientosXY = {
                 }
 sols = []
 caminos = []
-minGiros = [-1]
+
 
 conteoCasillas = {}#diccionario de casillas
-res = camionBacktracking(matriz, lado1, lado2, movimientosXY, posInicioX, posInicioY,'l', 0, minGiros)
+res = camionBacktracking(matriz, lado1, lado2, movimientosXY, posInicioX, posInicioY,'l', 0)
 for result in sols:
     printMatriz(result[0])
 

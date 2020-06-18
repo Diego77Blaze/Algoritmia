@@ -1,4 +1,4 @@
-def camionBacktracking(mapa, numFilas, numColumnas, movimientos,actX, actY, orientacion, giros):
+def camionBacktracking(mapa, numFilas, numColumnas, movimientos,actX, actY, orientacion):
     #añadir cota para si se ha pasado varias veces por la misma casilla con un if()
     if(mapa[actX][actY]=='2'):
         printear(mapa)
@@ -9,7 +9,7 @@ def camionBacktracking(mapa, numFilas, numColumnas, movimientos,actX, actY, orie
         testX = actX + posibleMov[1]
         testY = actY + posibleMov[2]
         if(0<=testX<numColumnas and 0<=testY<numFilas and (mapa[testX][testY]=='0' or mapa[testX][testY]=='*' or mapa[testX][testY]=='2')):
-            if mapa[testX][testY] !=2:
+            if mapa[testX][testY] !="2":
                 mapa[testX][testY] = '*'
             if camionBacktracking(mapa, numFilas, numColumnas, movimientos,testX,testY,testOrientacion):
                 return True
@@ -50,5 +50,6 @@ movimientosXY = {
 sols = []
 res = camionBacktracking(matriz, lado1, lado2, movimientosXY, posInicioX, posInicioY,'l')
 if res == True:
-    printear(sols)
+    for result in sols:
+        printear(result)
 

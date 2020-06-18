@@ -1,5 +1,4 @@
 def camionBacktracking(mapa, numFilas, numColumnas, movimientos,actX, actY, orientacion, giros, minGiros):
-    #añadir cota para si se ha pasado varias veces por la misma casilla con un if()
     if(mapa[actX][actY]=='2'):
         if minGiros[0]==-1:
             minGiros[0]=giros
@@ -21,6 +20,9 @@ def camionBacktracking(mapa, numFilas, numColumnas, movimientos,actX, actY, orie
             else:
                 return False
     else:
+        for value in list(conteoCasillas.values()):
+            if value > 3:
+                return False
         for i in range(2):
             testOrientacion = movimientos[orientacion][i][0]
             testX = actX + movimientos[orientacion][i][1]
@@ -34,13 +36,22 @@ def camionBacktracking(mapa, numFilas, numColumnas, movimientos,actX, actY, orie
                     posicion.append(testX)
                     posicion.append(testY)
                     caminos.append(posicion)
+                    casillaKey = str(testX)+str(testY)
+                    if casillaKey not in conteoCasillas:
+                        conteoCasillas[casillaKey] = 1
+                    else:
+                        conteoCasillas[casillaKey]=conteoCasillas.get(casillaKey)+1
                 if not camionBacktracking(mapa, numFilas, numColumnas, movimientos,testX,testY,testOrientacion, giros, minGiros):
+                    casillaKey = str(testX) + str(testY)
                     mapa[testX][testY] = '0'
-                    caminos.pop()
+                    if len(caminos)!=0:
+                        caminos.pop()
+                    if casillaKey in conteoCasillas:
+                        conteoCasillas[casillaKey] = conteoCasillas.get(casillaKey) - 1
 
     return False
 
-def printear(mapa):
+def printMatriz(mapa):
     for i in range(lado2):
         for j in range(lado1):
             print(mapa[i][j], end=' ')
@@ -73,9 +84,8 @@ movimientosXY = {
 sols = []
 caminos = []
 minGiros = [-1]
-#diccionario de casillas
+conteoCasillas = {}#diccionario de casillas
 res = camionBacktracking(matriz, lado1, lado2, movimientosXY, posInicioX, posInicioY,'l', 0, minGiros)
-if res == True:
-    for result in sols:
-        printear(result)
+for result in sols:
+    printMatriz(result[0])
 

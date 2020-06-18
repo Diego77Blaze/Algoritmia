@@ -7,17 +7,19 @@ def esPotenciaDos(num):
         num = num // 2
     return True
 
+
 def divideYVenceras(listaNotas):
-        if len(listaNotas) / 2 == 1:
-            media = (listaNotas[0] + listaNotas[1]) / 2
-            f.write(str(media))
-            f.write("  ")
-            return media
-        else:
-            n = len(listaNotas)
-            lista1 = listaNotas[0:int(n / 2)]
-            lista2 = listaNotas[int(n / 2):n]
-            return (divideYVenceras(lista1) + divideYVenceras(lista2)) / 2
+    if len(listaNotas) / 2 == 1:
+        media = (listaNotas[0] + listaNotas[1]) / 2
+        f.write(str(media))
+        f.write("  ")
+        return media
+    else:
+        n = len(listaNotas)
+        lista1 = listaNotas[0:int(n / 2)]
+        lista2 = listaNotas[int(n / 2):n]
+        return (divideYVenceras(lista1) + divideYVenceras(lista2)) / 2
+
 
 def divideYVenceras2(listaNotas):
     if len(listaNotas) == 1:
@@ -47,14 +49,12 @@ f.write("")
 f.close()
 if esPotenciaDos(len(notasAsignaturas)):
     f = f = open("resultado_dyv.txt", "a")
-    w =divideYVenceras(notasAsignaturas)
+    w = divideYVenceras(notasAsignaturas)
     f.write("--> Resultado = ")
     f.write(str(w))
 else:
     f = open("resultado_dyv.txt", "a")
     l = len(notasAsignaturas)
-    w = divideYVenceras2(notasAsignaturas)/l
+    w = divideYVenceras2(notasAsignaturas) / l
     f.write("--> Resultado = ")
     f.write(str(w))
-
-

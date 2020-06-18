@@ -1,5 +1,5 @@
 def camionBacktracking(mapa, numFilas, numColumnas, movimientos,actX, actY, orientacion):
-    #añadir cota para si se ha pasado varias veces por la misma casilla con un if()
+    # añadir cota para si se ha pasado varias veces por la misma casilla con un if()
     if(mapa[actX][actY]=='2'):
         printear(mapa)
         sols.append(mapa)

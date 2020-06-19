@@ -9,7 +9,7 @@ def camionBacktracking(mapa, numFilas, numColumnas, movimientos, actX, actY, ori
             if giros < minGiros[0]:
                 minGiros[0] = giros
         datos = []
-        mapaTupla = convertirMapaTupla(lado1, lado2, mapa)
+        mapaTupla = convertirMapaTupla(lado1, lado2, mapa) ##QUITAR
         datos.append(mapaTupla)
         datos.append(giros)
         caminosTupla = convertirCaminoTupla(caminos)
@@ -18,7 +18,7 @@ def camionBacktracking(mapa, numFilas, numColumnas, movimientos, actX, actY, ori
         return True
     else:
         for value in list(conteoCasillas.values()):
-            if value > 4:
+            if value > 3:
                 return False
         for i in range(2):
             testOrientacion = movimientos[orientacion][i][0]
@@ -107,9 +107,15 @@ for i in range (len(sols)):
     f.write("Solución ")
     f.write(str(i+1))
     f.write("\n")
+    mapaTupla = tuple(matriz)
     for j in range(lado2):
         for k in range(lado1):
-            f.write(str(sols[i][0][j][k]))
+            for elem in sols[i][2]:
+                if j == elem[0] and k==elem[1]:
+                    mapaTupla[j][k] = '*'
+    for l in range(lado2):
+        for m in range(lado1):
+            f.write(str(mapaTupla[l][m]))
             f.write(" ")
         f.write("\n")
     f.write("[")

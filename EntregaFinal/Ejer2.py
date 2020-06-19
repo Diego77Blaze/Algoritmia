@@ -55,6 +55,9 @@ if esPotenciaDos(len(notasAsignaturas)):
 else:
     f = open("resultado_dyv.txt", "a")
     l = len(notasAsignaturas)
-    w = divideYVenceras2(notasAsignaturas) / l
-    f.write("--> Resultado = ")
+    w = divideYVenceras2(notasAsignaturas)
     f.write(str(w))
+    f.write("/")
+    f.write(str(l))
+    f.write("--> Resultado = ")
+    f.write(str(w/l))

@@ -1,3 +1,7 @@
 Numero de grupos: 2
-Los grupos de usuarios son: [{'Antonio', 'Emma', 'Carlos', 'Bea'}, {'Fernando', 'David'}]
-Y, por tanto, este es el grado de conexión: 0.3333333333333333
+Los grupos de usuarios son: 
+
+- Grupo 1: {'persona56', 'persona29', 'persona97', 'persona11', 'persona9', 'persona59', 'persona80', 'persona2', 'persona42', 'persona71', 'persona43', 'persona37', 'persona26', 'persona78', 'persona25', 'persona21', 'persona23', 'persona57', 'persona91', 'persona73', 'persona40', 'persona13', 'persona51', 'persona52', 'persona15', 'persona87', 'persona38', 'persona32', 'persona95', 'persona7', 'persona41', 'persona79', 'persona27', 'persona34', 'persona92', 'persona85', 'persona77', 'persona14', 'persona6', 'persona68', 'persona96', 'persona33', 'persona60', 'persona99', 'persona45', 'persona86', 'persona4', 'persona54', 'persona28', 'persona19', 'persona24', 'persona5', 'persona83', 'persona16', 'persona31', 'persona8', 'persona22', 'persona12', 'persona88', 'persona50', 'persona64', 'persona76', 'persona100', 'persona65', 'persona1', 'persona49', 'persona94', 'persona63', 'persona93', 'persona46', 'persona84', 'persona82', 'persona36', 'persona47', 'persona89', 'persona17', 'persona35', 'persona55', 'persona70', 'persona67', 'persona81', 'persona44', 'persona10', 'persona30', 'persona20', 'persona98', 'persona53', 'persona69', 'persona18', 'persona72', 'persona74', 'persona75', 'persona58', 'persona39', 'persona48', 'persona66', 'persona3'}
+- Grupo 2: {'persona61', 'persona62', 'persona90'}
+
+Y, por tanto, este es el grado de conexión: 0.020202020202020204

@@ -25,9 +25,16 @@ def ejer1(listaUsuarios):
     file.write("Numero de grupos: ")
     file.write(str(len(resFinal)))
     file.write("\n")
-    file.write("Los grupos de usuarios son: ")
-    file.write(str(resFinal))
+    file.write("Los grupos de usuarios son: \n\n")
+    for i in range(len(resFinal)):
+        file.write("- Grupo ")
+        file.write(str(i+1))
+        file.write(": ")
+        file.write(str(resFinal[i]))
+        file.write("\n")
     file.write("\n")
+
+
 
     gradoConexion = len(resFinal)/len(listaUsuarios)
     return gradoConexion

@@ -63,11 +63,12 @@ lado1 = int(lista[1][0])
 lado2 = int(lista[0][0])
 matriz = []
 for i in range(2, lado2 + 2):
-    linea = lista[i].split()
-    lineaMatriz = []
-    for elem in linea:
-        lineaMatriz.append(elem)
-    matriz.append(lineaMatriz)
+    if lista != "":
+        linea = lista[i].split()
+        lineaMatriz = []
+        for elem in linea:
+            lineaMatriz.append(elem)
+        matriz.append(lineaMatriz)
 for i in range(len(matriz)):
     for j in range(len(matriz[i])):
         if matriz[i][j] == '1':

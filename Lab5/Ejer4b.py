@@ -16,7 +16,7 @@ print("Cuántas casillas quieres que tenga el lado del tablero?")
 lado1 = int(input())
 print("Cuántas casillas quieres que tenga el lado del tablero?")
 lado2 = int(input())
-tablero = [["-" for i in range(lado1)] for i in range(lado2)]
+tablero = [["-" for i in range(lado1)] for j in range(lado2)]
 movimientosX = [2, 1, -1, -2, -2, -1, 1, 2]
 movimientosY = [1, 2, 2, 1, -1, -2, -2, -1]
 tablero[0][0] = 1

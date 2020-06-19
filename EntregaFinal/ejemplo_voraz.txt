@@ -3,12 +3,12 @@ persona2:persona99
 persona3:persona75
 persona4:persona94,persona20,persona35,persona48
 persona5:persona28,persona20
-persona6:persona33,persona11,persona66,persona4,persona3
+persona6:persona33,persona66,persona4,persona3
 persona7:persona14,persona89,persona4,persona43
 persona8:persona70,persona10,persona19,persona45,persona59
 persona9:persona6,persona92,persona75,persona85,persona82,persona47
 persona10:persona42,persona7
-persona11:persona57
+persona11:
 persona12:persona44,persona76,persona24,persona82,persona25,persona99
 persona13:persona75,persona14,persona30
 persona14:persona22,persona21,persona43,persona81,persona17,persona28,persona52,persona88,persona42
@@ -39,7 +39,7 @@ persona38:persona30,persona34,persona51,persona79,persona25,persona92,persona40,
 persona39:persona10,persona93,persona98,persona78,persona29,persona43,persona95,persona47,persona18,persona41
 persona40:persona69,persona63
 persona41:persona69,persona8,persona71,persona16,persona10,persona35,persona20
-persona42:persona84,persona11,persona25,persona89,persona49,persona66,persona56,persona96,persona88
+persona42:persona84,persona25,persona89,persona49,persona66,persona56,persona96,persona88
 persona43:persona4,persona12,persona78,persona99,persona26,persona66,persona31
 persona44:persona38,persona51
 persona45:persona51,persona89,persona63,persona76,persona12,persona69,persona43
@@ -55,7 +55,7 @@ persona54:persona31,persona38,persona58
 persona55:persona18,persona41,persona3,persona39,persona73
 persona56:persona89,persona57:persona7,persona56
 persona58:persona67,persona51,persona63,persona98,persona71,persona54,persona57,persona12
-persona59:persona11,persona13,persona29,persona68,persona34,persona12
+persona59:persona13,persona29,persona68,persona34,persona12
 persona60:persona24,persona75,persona81,persona4,persona15,persona64
 persona61:persona62
 persona62:
@@ -91,8 +91,8 @@ persona91:persona1,persona35,persona84,persona86,persona48,persona80,persona27,p
 persona92:persona37,persona78,persona57,persona44,persona7
 persona93:persona6,persona68,persona16
 persona94:persona36,persona26,persona56,persona68
-persona95:persona81,persona69,persona40,persona11,persona87
-persona96:persona52,persona21,persona68,persona11,persona84,persona15,persona66
+persona95:persona81,persona69,persona40,persona87
+persona96:persona52,persona21,persona68,persona84,persona15,persona66
 persona97:persona99,persona56,persona94,persona73,persona82,persona46,persona5
 persona98:persona85
 persona99:persona68,persona72,persona21,persona41,persona6,persona63,persona13,persona45,persona18,persona12

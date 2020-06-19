@@ -59,8 +59,8 @@ def convertirCaminoTupla(caminos):
 
 archivo = open("ejemplo_backtracking.txt").read()
 lista = archivo.split('\n')
-lado1 = int(lista[0][0])
-lado2 = int(lista[1][0])
+lado1 = int(lista[1][0])
+lado2 = int(lista[0][0])
 matriz = []
 for i in range(2, lado2 + 2):
     linea = lista[i].split()
@@ -91,9 +91,7 @@ f.close()
 res = camionBacktracking(matriz, lado1, lado2, movimientosXY, posInicioX, posInicioY, dirIni, 0, minGiros, posFinal)
 f = f = open("resultado_backtracking.txt", "a")
 for i in range(len(sols)):
-    f.write("Solución ")
-    f.write(str(i + 1))
-    f.write("\n")
+    f.write("Solución " + str(i + 1) + "\n")
     mapaTupla = tuple(matriz)
     for j in range(lado2):
         for k in range(lado1):
@@ -102,38 +100,12 @@ for i in range(len(sols)):
                     mapaTupla[j][k] = '*'
     for l in range(lado2):
         for m in range(lado1):
-            f.write(str(mapaTupla[l][m]))
-            f.write(" ")
+            f.write(str(mapaTupla[l][m]) + " ")
         f.write("\n")
-    f.write("[")
-    f.write(str(posInicioX))
-    f.write(", ")
-    f.write(str(posInicioY))
-    f.write(", ")
-    f.write(dirIni)
-    f.write("], ")
+    f.write("[" + str(posInicioX) + ", " + str(posInicioY) + ", " + dirIni + "], ")
     for w in range(len(sols[i][1]) - 1):
-        f.write("[")
-        f.write(str(sols[i][1][w][0]))
-        f.write(", ")
-        f.write(str(sols[i][1][w][1]))
-        f.write(", ")
-        f.write(sols[i][1][w + 1][2])
-        f.write("], ")
-    f.write("[")
-    f.write(str(sols[i][1][len(sols[i][1]) - 1][0]))
-    f.write(", ")
-    f.write(str(sols[i][1][len(sols[i][1]) - 1][1]))
-    f.write(", ")
-    f.write(posFinal[2 + (3 * i)])
-    f.write("], [")
-    f.write(str(posFinal[0 + (3 * i)]))
-    f.write(", ")
-    f.write(str(posFinal[1 + (3 * i)]))
-    f.write(", FINISHED]")
+        f.write("[" + str(sols[i][1][w][0]) + ", " + str(sols[i][1][w][1]) + ", " + sols[i][1][w + 1][2] + "], ")
+    f.write("[" + str(sols[i][1][len(sols[i][1]) - 1][0]) + ", " + str(sols[i][1][len(sols[i][1]) - 1][1]) + ", " + posFinal[2 + (3 * i)] + "], [" + str(posFinal[0 + (3 * i)]) + ", " + str(posFinal[1 + (3 * i)]) + ", FINISHED]")
     if sols[i][0] == minGiros[0]:
-        f.write("\nEsta solución es óptima dado que tiene ")
-        f.write(str(minGiros[0]))
-        f.write(" giros")
-    f.write("\n")
-    f.write("\n")
+        f.write("\nEsta solución es óptima dado que tiene " + str(minGiros[0]) + " giros")
+    f.write("\n\n")

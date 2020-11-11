@@ -1,8 +1,0 @@
-Numero de grupos: 3
-Los grupos de usuarios son: 
-
-- Grupo 1: {'persona11'}
-- Grupo 2: {'persona99', 'persona7', 'persona37', 'persona97', 'persona10', 'persona47', 'persona64', 'persona34', 'persona68', 'persona95', 'persona1', 'persona29', 'persona87', 'persona82', 'persona91', 'persona49', 'persona100', 'persona86', 'persona30', 'persona78', 'persona72', 'persona46', 'persona40', 'persona31', 'persona53', 'persona56', 'persona66', 'persona58', 'persona45', 'persona57', 'persona94', 'persona54', 'persona55', 'persona33', 'persona89', 'persona13', 'persona60', 'persona76', 'persona44', 'persona98', 'persona23', 'persona69', 'persona63', 'persona77', 'persona21', 'persona43', 'persona24', 'persona28', 'persona38', 'persona83', 'persona4', 'persona79', 'persona70', 'persona71', 'persona20', 'persona48', 'persona80', 'persona42', 'persona39', 'persona3', 'persona73', 'persona8', 'persona5', 'persona17', 'persona22', 'persona19', 'persona27', 'persona51', 'persona36', 'persona92', 'persona52', 'persona96', 'persona85', 'persona26', 'persona74', 'persona81', 'persona65', 'persona50', 'persona2', 'persona75', 'persona6', 'persona16', 'persona25', 'persona18', 'persona15', 'persona9', 'persona59', 'persona12', 'persona35', 'persona41', 'persona93', 'persona67', 'persona32', 'persona84', 'persona14', 'persona88'}
-- Grupo 3: {'persona90', 'persona61', 'persona62'}
-
-Y, por tanto, este es el grado de conexión: 0.030303030303030304
